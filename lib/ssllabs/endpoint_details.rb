@@ -11,9 +11,11 @@ module Ssllabs
       :nonPrefixDelegation?,
       :vulnBeast?,
       :renegSupport,
+      :stsStatus,
       :stsResponseHeader,
       :stsMaxAge,
       :stsSubdomains?,
+      :stsPreload?,
       :pkpResponseHeader,
       :sessionResumption,
       :compressionMethods,
@@ -28,7 +30,8 @@ module Ssllabs
       :httpForwarding,
       :supportsRc4?,
       :forwardSecrecy,
-      :rc4WithModern?
+      :rc4WithModern?,
+      :rc4Only?
     has_object_ref :sims, SimDetails
     has_fields :heartbleed?,
       :heartbeat?,
@@ -41,6 +44,7 @@ module Ssllabs
       :dhPrimes,
       :dhUsesKnownPrimes,
       :dhYsReuse?,
-      :logjam?
+      :logjam?,
+      :chaCha20Preference?
   end
 end
